@@ -1,0 +1,32 @@
+{% extends 'base_logged.html' %}
+{% block title %}Editar Evento{% endblock %}
+{% block content %}
+
+<div class="container text-center">
+    <h2 class="mt-4">Editar Evento</h2>
+    <form method="POST" action="{{ url_for('edit_event', event_id=event_id) }}">
+        <div class="row">
+            <label for="nombre">Titulo</label>
+            <input type="text" class="mt-2 form-control" id="nombre" name="nombre" value='{{event.nombre}}' required><br>
+        </div>
+        <div class="row">
+            <label for="fecha">Fecha</label>
+            <input type="date" class="mt-2 form-control" id="fecha" name="fecha" value="{{event.fecha}}" required><br>
+        </div>
+        <div class="row">
+            <label for="lugar">Lugar</label>
+            <input type="text" class="mt-2 form-control" id="lugar" name="lugar" value="{{event.lugar}}" required><br>
+        </div>
+        <div class="row">
+            <label for="modalidad">Modalidad</label>
+            <select class="form-control mt-2" id="modalidad"  name="modalidad">
+                <option><a class="" value="Presencial">Presencial</a></option>
+                <option><a class="" value="Virtual">Virtual</a></option>
+            </select>
+        </div>
+</div>
+
+<input class="btn btn-dark mt-4  btn-lg" type="submit" value="Guardar evento">
+</form>
+</div>
+{% endblock %}

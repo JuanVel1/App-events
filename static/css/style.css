@@ -1,0 +1,20 @@
+a:hover {
+    opacity: 50%;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+footer, nav {
+    background-color: #fdcdcd;
+}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block base%}
+{% block nombre %}{% endblock %}
+<div class=" container w-100 justify-content-around ">
+    <a class="navbar-brand fs-4 fw-bold" href="{{ url_for('index') }}">Inicio</a>
+    <a class="nav-link fs-4 fw-light" href="{{ url_for('create_event') }}">Crear Evento</a>
+    <a class=" nav-link fs-4 fw-light" href="{{ url_for('logout') }}">Cerrar sesión</a>
+</div>
+{% endblock %}

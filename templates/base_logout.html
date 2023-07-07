@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}
+{{title}}
+{% endblock %}
+{% block base%}
+<div class="container-fluid justify-content-center">
+    <a class="nav-link m-3 fs-4 fw-bold" href="{{ url_for('login') }}">Iniciar Sesión</a>
+    <a class="nav-link m-3 fs-4 fw-bold" href="{{ url_for('register') }}">Registrarse</a>
+</div>
+{% endblock %}

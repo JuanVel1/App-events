@@ -1,0 +1,27 @@
+{% extends 'base_logged.html' %}
+{% block title %} Eventos {% endblock %}
+{% block content %}
+
+
+
+<div class="container text-center">
+
+    <h2 class="mt-4">Eventos</h2>
+    <ul class="list-group list-group-numbered">
+        {% for event in events %}
+        <li class="list-group-item">
+            <strong class="text-uppercase">{{ event['nombre'] }}</strong>
+            <ul class="list-group-flush mb-3">
+                <li class="list-group-item">Fecha: {{ event['fecha'] }}</li>
+                <li class="list-group-item">Lugar: {{ event['lugar'] }}</li>
+                <li class="list-group-item bg-danger text-light rounded-3">Modalidad: {{ event['modalidad'] }}</li>
+            </ul>
+            <a class="fs-5 m-3 mt-2" style="color: rgb(68, 179, 68);"
+                href="{{ url_for('edit_event', event_id=loop.index-1) }}"><i class="bi bi-pencil-square"></i></a>
+            <a class="fs-5  m-3 mt-2" style="color: rgb(179, 68, 68);"
+                href="{{ url_for('delete_event', event_id=loop.index-1) }}"><i class="bi bi-x-circle"></i></a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
